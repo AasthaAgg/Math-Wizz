@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: calc(100% - 6rem);
+    min-height: calc(100vh - 6rem);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-image: url('bg.png');
+    background-size: cover;
+    padding: 3rem;
+}
+
+.page{
+    height: fit-content;
+    min-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem;
+    border-radius: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.687);
+}
+
+.page h1{
+    margin-bottom: 2rem;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.page1 p{
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.page1 section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.page1 .userName{
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    width: 8rem;
+}
+
+.page1 button{
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    background-color: black;
+    color: white;
+}
+
+.page2{
+    display: none;
+}
+
+.page2 .setUserName{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 6rem;
+    text-align: right;
+}
+
+.page2 .setScore{
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-top: 4rem;
+}
+
+.page2 .quesSection{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.page2 .ans{
+    padding: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    width: 7rem;
+}
+
+.page3{
+	display: none;
+}
+
+.page3 span{
+    font-size: 5rem;
+}
+
+.page3 .msg{
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.page3 .displayScore{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.page3 button{
+    width: 8rem;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: antiquewhite;
+    border-color: rgb(216, 199, 175);
+    box-shadow: 4px 3px 0 rgba(0, 0, 0, 0.687);
+    cursor: pointer;
+}

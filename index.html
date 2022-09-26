@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="page page1">
+
+        <h1>Math Wizz</h1>
+
+        <p>Welcome to the Math Wizz Game.
+            <br>Let's test your math skills!!😃
+        </p>
+        
+        <p>You'll be given random math questions that you'll have to answer.
+            <br>Level changes when you reach the score of: 10, 20, 30...
+        </p>
+        
+        <p>Please enter your username to start:</p>
+
+        <section class="submit">
+            <input type="text" placeholder="username" class="userName">
+            <button onclick="displayPage2()">Submit</button>
+        </section>
+
+    </div>
+
+    <div class="page page2">
+        
+        <h1>Math Wizz</h1>
+        
+        <p class="setUserName">Hello  </p>
+
+        <div class="quesSection">
+            <p class="ques"></p>
+            =
+            <input type="text" class="ans" value="" onchange="checkResult()">
+        </div>
+
+        <p class="setScore">🏆 Score : <span class="score"></span></p>
+
+    </div>
+
+    <div class="page page3">
+        <p class="msg">GAME OVER !!</p>
+
+        <span class="trophy">🏆</span>
+
+        <p class="displayScore">Score : </p>
+
+        <button onclick="location.reload()">GO BACK</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
