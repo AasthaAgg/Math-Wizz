@@ -14,6 +14,9 @@ body{
     padding: 3rem;
 }
 
+
+/* ===== ALL 3 PAGES ===== */
+
 .page{
     height: fit-content;
     min-width: 600px;
@@ -32,6 +35,9 @@ body{
     font-size: 60px;
     font-weight: 600;
 }
+
+
+/* ===== PAGE 1 ===== */
 
 .page1 p{
     font-size: 26px;
@@ -58,15 +64,21 @@ body{
     color: white;
 }
 
+
+/* ===== PAGE 2 ===== */
+
 .page2{
     display: none;
 }
 
-.page2 .setUserName{
-    font-size: 2rem;
-    font-weight: 500;
+.page2 section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 6rem;
-    text-align: right;
 }
 
 .page2 .setScore{
@@ -91,12 +103,15 @@ body{
     width: 7rem;
 }
 
+
+/* ===== PAGE 3 ===== */
+
 .page3{
 	display: none;
 }
 
 .page3 span{
-    font-size: 5rem;
+    font-size: 6rem;
 }
 
 .page3 .msg{
