@@ -36,7 +36,7 @@ function setScore(){
 
 function generateQues(){
     var len = userScore.toString().length;
-    timerSec = timerSec*len;
+    timerSec = 5*len;
     generatedQues = "";
 
     const numbers = "0123456789";
