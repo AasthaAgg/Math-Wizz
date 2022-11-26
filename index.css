@@ -7,10 +7,12 @@ body{
     width: calc(100% - 6rem);
     min-height: calc(100vh - 6rem);
     display: flex;
+    flex-direction: row;
     justify-content: right;
     align-items: center;
     background-image: url('bg.png');
     background-size: cover;
+    background-repeat: no-repeat;
     padding: 3rem;
 }
 
@@ -19,20 +21,21 @@ body{
 
 .page{
     height: fit-content;
-    min-width: 600px;
+    width: 650px;
+    max-width: calc(100% - 6rem);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 4rem;
+    padding: 3rem 4rem;
     border-radius: 2rem;
     backdrop-filter: blur(10px);
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.687);
 }
 
 .page h1{
-    margin-bottom: 2rem;
-    font-size: 60px;
+    margin-bottom: 1rem;
+    font-size: 3.25rem;
     font-weight: 600;
 }
 
@@ -40,8 +43,9 @@ body{
 /* ===== PAGE 1 ===== */
 
 .page1 p{
-    font-size: 26px;
+    font-size: 1.65rem;
     font-weight: 500;
+    margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
@@ -138,4 +142,88 @@ body{
     border-color: rgb(216, 199, 175);
     box-shadow: 4px 3px 0 rgba(0, 0, 0, 0.687);
     cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    
+    body{
+        width: calc(100% - 2rem);
+        min-height: calc(100vh - 2rem);
+        padding: 1rem;
+        justify-content: center;
+    }
+    
+    .page{
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .page h1{
+        font-size: 2rem;
+    }
+    
+    /* ===== PAGE 1 ===== */
+
+    .page1 p{
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .page1 .userName, .page1 button{
+        padding: 0.4rem;
+        font-size: 0.9rem;
+        width: 5rem;
+    }
+
+    /* ===== PAGE 2 ===== */
+
+    .page2 section{
+        flex-direction: column-reverse;
+        justify-content: center;
+        font-size: 1.15rem;
+        margin-bottom: 1.5rem;
+        line-height: 3rem;
+    }
+
+    .page2 .quesSection{
+        flex-direction: column;
+        align-items: center;
+        font-size: 2rem;
+    }
+
+    .page2 .ans{
+        margin-top: 1.2rem;
+        padding: 0.25rem;
+        font-size: 1.75rem;
+        text-align: center;
+        width: 3rem;
+    }
+
+    .page2 .setScore{
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 3rem;
+    }
+
+    
+    /* ===== PAGE 3 ===== */
+
+    .page3 .msg{
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .page3 span{
+        font-size: 5rem;
+    }
+
+    .page3 .displayScore{
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+    }
 }
