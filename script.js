@@ -1,9 +1,9 @@
-
-var userScore = 0;
-var generatedQues;
-var timer;
-var timerSec = 5;
-var msg = "GAME OVER !!";
+let status;
+let userScore = 0;
+let generatedQues;
+let timer;
+let timerSec = 5;
+let msg = "GAME OVER !!";
 
 
 // ===== DISPLAY PAGE 2 & START GAME =====
@@ -20,7 +20,7 @@ function displayPage2(){
 // ===== SET USERNAME =====
 
 function setUserName(){
-    var userName = document.querySelector('.userName').value;
+    const userName = document.querySelector('.userName').value;
     document.querySelector('.setUserName').innerHTML += (userName+"👋");
 }
 
@@ -35,14 +35,14 @@ function setScore(){
 // ===== GENERATE QUESTION =====
 
 function generateQues(){
-    var len = userScore.toString().length;
+    let len = userScore.toString().length;
     timerSec = 5*len;
     generatedQues = "";
 
     const numbers = "0123456789";
     const symbols = "+-*/";
-    var lenNum1 = 1;
-    var lenNum2 = 1;
+    let lenNum1 = 1;
+    let lenNum2 = 1;
 
     // SET DIFFICULTY BY CHANGING LENGTH OF NUMBERS
 
@@ -56,7 +56,7 @@ function generateQues(){
 
     // GENERATE 1st NUMBER
 
-    for(var i=0;i<lenNum1;i++){
+    for(let i=0;i<lenNum1;i++){
        generatedQues += getNumber();
     }
 
@@ -66,11 +66,11 @@ function generateQues(){
 
     // GENERATE 2nd NUMBER
 
-    for(var i=0;i<lenNum2;i++){
+    for(let i=0;i<lenNum2;i++){
 
         // TO AVOID DIVIDE BY ZERO
         if(lenNum2 == 1 && generatedQues.charAt(generatedQues.length-1) === '/'){
-            var tempNum2 = getNumber();
+            let tempNum2 = getNumber();
             while(tempNum2 == 0){
                 tempNum2 = getNumber();
             }
@@ -105,21 +105,23 @@ function setQues(){
 function countDown(secs) {
 	document.querySelector('.timer').innerHTML = "Time Left :  " + secs + " secs";
 
-	if(secs < 1) {
-		clearTimeout(timer);
+	if(status === 'end'){
+		setMsgScoreOfPage3();
+        	displayPage3();
+	}else if(secs == 0) {
 		msg = "OOPs, TIME's UP!!";
-        setMsgScoreOfPage3();
-        displayPage3();
+        	setMsgScoreOfPage3();
+        	displayPage3();
+	}else{
+		secs--;
+		timer = setTimeout('countDown('+secs+')',1000);
 	}
-
-	secs--;
-	timer = setTimeout('countDown('+secs+')',1000);
 }
 
 // ===== CHECK USER INPUT =====
 
 function checkResult(){
-    var ans = parseInt(document.querySelector('.ans').value);
+    let ans = parseInt(document.querySelector('.ans').value);
 
     if(ans === evaluateAns(generatedQues)){
         updateScore();
@@ -154,7 +156,8 @@ function resetAns(){
 // ===== DISPLAY END PAGE =====
 
 function displayPage3(){
-    document.querySelector('.page2').style.display = "none";
+	status = "end";
+	document.querySelector('.page2').style.display = "none";
 	document.querySelector('.page3').style.display = "flex";
 }
 
